@@ -34,7 +34,7 @@ const generateBoard = (boardState: IBoardState, onChange: (x: number, y: number,
     })
   })
 
-  for (let y = 0; y < boardState.board.height; y++) {
+  for (let y = boardState.board.height -1 ; y >= 0 ; y--) {
     output.push([]);
     for (let x = 0; x < boardState.board.width; x++) {
       let snakePiece: {
