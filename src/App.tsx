@@ -147,7 +147,12 @@ class App extends Component<{}, IAppState> {
   private buildBoardState: () => IBoardState = () => {
     return {
       game: {
-        id: this.state.id
+        id: this.state.id,
+        ruleset: {
+          name: "standard",
+          version: "v.1.2.3"
+        },
+        timeout: 500
       },
       turn: 200,
       you: {
