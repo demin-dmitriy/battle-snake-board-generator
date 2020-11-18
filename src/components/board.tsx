@@ -48,12 +48,12 @@ const generateBoard = (boardState: IBoardState, onChange: (x: number, y: number,
       } | undefined = boardWithSnakes[x] && boardWithSnakes[x][y] ? boardWithSnakes[x][y] : undefined;
 
       if (boardState.board.food.some(food => food.x === x && food.y === y)) {
-        output[y].push(<CellComponent key={`${x},${y}`} colour="orange" onChange={() => onChange(x, y, "food")} />)
+        output[boardState.board.height -1 - y].push(<CellComponent key={`${x},${y}`} colour="orange" onChange={() => onChange(x, y, "food")} />)
       } else if (snakePiece !== undefined) {
         let id: string = snakePiece.id;
-        output[y].push(<CellComponent key={`${x},${y}`} colour={snakePiece.colour} isHead={snakePiece.isHead} onChange={() => onChange(x, y, id)} />)
+        output[boardState.board.height -1 - y].push(<CellComponent key={`${x},${y}`} colour={snakePiece.colour} isHead={snakePiece.isHead} onChange={() => onChange(x, y, id)} />)
       } else {
-        output[y].push(<CellComponent key={`${x},${y}`} onChange={() => onChange(x, y, "")} />)
+        output[boardState.board.height -1 -y].push(<CellComponent key={`${x},${y}`} onChange={() => onChange(x, y, "")} />)
       }
     }
   }
