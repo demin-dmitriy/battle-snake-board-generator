@@ -1,8 +1,8 @@
 import React from "react";
 
 export const generateColour: () => string = () => {
-  var max = 0xffffff;
-  return '#' + Math.round(Math.random() * max).toString(16);
+  var max = 0xffff;
+  return '#FF' + Math.round(Math.random() * max).toString(16);
 }
 
 export const onChangeNumberLimitFactory = (target: (...arg: any) => void, max: number = 1000, min: number = 0) => {

@@ -294,7 +294,7 @@ class App extends Component<{}, IAppState> {
           </TitledContainer>
           <Board boardState={this.buildBoardState()} onChange={this.selectCell} />
           <TitledContainer title="Keyboard Shortcuts">
-            <p>Spacebar: Ping Snake v0.1</p>
+            <p>Spacebar: Ping Snake v0.2</p>
           </TitledContainer>
         </div>
         <div>
