@@ -45,8 +45,8 @@ class App extends Component<{}, IAppState> {
 
     this.state = {
       id: generateId(),
-      height: "15",
-      width: "15",
+      height: "11",
+      width: "11",
       food: [],
       snakes: [],
       you: {
@@ -283,7 +283,7 @@ class App extends Component<{}, IAppState> {
             width={width}
             uploadBoard={this.uploadBoard}
           />
-          <TestSnake boardState={this.buildBoardState()} />
+         
         </div>
         <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
           <TitledContainer title="Current Mode">
@@ -293,8 +293,8 @@ class App extends Component<{}, IAppState> {
             </div>
           </TitledContainer>
           <Board boardState={this.buildBoardState()} onChange={this.selectCell} />
-          <TitledContainer title="Keyboard Shortcuts">
-            <p>Spacebar: Ping Snake v0.2</p>
+          <TitledContainer title="Version">
+            <p>v0.3</p>
           </TitledContainer>
         </div>
         <div>
