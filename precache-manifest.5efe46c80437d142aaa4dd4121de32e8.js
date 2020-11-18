@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "86b8cbe061c5f948502e",
+    "revision": "64fcf6991771219747ae",
     "url": "/battle-snake-board-generator/static/css/main.660823fe.chunk.css"
   },
   {
-    "revision": "86b8cbe061c5f948502e",
-    "url": "/battle-snake-board-generator/static/js/main.86b8cbe0.chunk.js"
+    "revision": "64fcf6991771219747ae",
+    "url": "/battle-snake-board-generator/static/js/main.64fcf699.chunk.js"
   },
   {
     "revision": "51560233812fbd20f57b",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/battle-snake-board-generator/static/js/runtime~main.f8ccee89.js"
   },
   {
-    "revision": "98319a2bd9bb037e542693a8ab5337ba",
+    "revision": "68c9e7ce8fa33bfef7ac1a999d094247",
     "url": "/battle-snake-board-generator/index.html"
   }
 ];
