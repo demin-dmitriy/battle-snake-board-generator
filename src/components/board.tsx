@@ -53,7 +53,7 @@ const generateBoard = (boardState: IBoardState, onChange: (x: number, y: number,
         let id: string = snakePiece.id;
         output[boardState.board.height -1 - y].push(<CellComponent key={`${x},${boardState.board.height -1 - y}`} colour={snakePiece.colour} isHead={snakePiece.isHead} onChange={() => onChange(x, boardState.board.height -1 - y, id)} />)
       } else {
-        output[boardState.board.height -1 -y].push(<CellComponent key={`${x},${yboardState.board.height -1 - y}`} onChange={() => onChange(x, boardState.board.height -1 - y, "")} />)
+        output[boardState.board.height -1 -y].push(<CellComponent key={`${x},${boardState.board.height -1 - y}`} onChange={() => onChange(x, boardState.board.height -1 - y, "")} />)
       }
     }
   }
