@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/battle-snake-board-generator/precache-manifest.2161add0a699cdf7434488812c269dd2.js"
+  "/battle-snake-board-generator/precache-manifest.d2e0de2d929a45c5fe564d00bf0a28c4.js"
 );
 
 workbox.clientsClaim();
