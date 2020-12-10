@@ -169,12 +169,16 @@ class App extends Component<{}, IAppState> {
           health: parseInt(this.state.you.health, 10),
           id: "you",
           name: this.state.you.colour,
-          body: this.state.you.body
+          body: this.state.you.body,
+          head: this.state.you.body[0],
+          length: this.state.you.body.length
         }].concat(this.state.snakes.map(snake => ({
           health: parseInt(snake.health, 10),
           id: snake.id,
           name: snake.colour,
-          body: snake.body
+          body: snake.body,
+          head: snake.body[0],
+          length: snake.body.length
         })))
       }
     }
@@ -283,7 +287,7 @@ class App extends Component<{}, IAppState> {
             width={width}
             uploadBoard={this.uploadBoard}
           />
-         
+
         </div>
         <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
           <TitledContainer title="Current Mode">
