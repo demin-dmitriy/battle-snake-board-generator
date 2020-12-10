@@ -1,1 +1,1 @@
-Check it out at https://lworkman.github.io/battle-snake-board-generator/
+Check it out at https://Nettogrof.github.io/battle-snake-board-generator/
