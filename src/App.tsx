@@ -159,7 +159,9 @@ class App extends Component<{}, IAppState> {
         health: parseInt(this.state.you.health, 10),
         id: "you",
         name: this.state.you.colour,
-        body: this.state.you.body
+        body: this.state.you.body,
+        head: this.state.you.body[0],
+        length: this.state.you.body.length
       },
       board: {
         food: this.state.food,
@@ -287,7 +289,7 @@ class App extends Component<{}, IAppState> {
             width={width}
             uploadBoard={this.uploadBoard}
           />
-
+         
         </div>
         <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
           <TitledContainer title="Current Mode">
