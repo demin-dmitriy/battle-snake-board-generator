@@ -45,7 +45,10 @@ export class TestSnake extends React.Component<ITestSnakeProps, ITestSnakeState>
       headers: [
         ["content-type", "application/json"]
       ]
-    }).then(res => res.json()).then((move: IBoardMove) => this.setState({ response: move.move }));
+    }).then(res => res.json()).then((move: IBoardMove) => this.setState({ response: move.move })).catch(e => {
+      console.log(e);
+      return e;
+    });;
   }
 
   public render() {
