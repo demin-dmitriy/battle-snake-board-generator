@@ -289,6 +289,7 @@ class App extends Component<{}, IAppState> {
             width={width}
             uploadBoard={this.uploadBoard}
           />
+          <TestSnake boardState={this.buildBoardState()} />
          
         </div>
         <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
