@@ -41,6 +41,7 @@ export class TestSnake extends React.Component<ITestSnakeProps, ITestSnakeState>
     fetch(url, {
       body: JSON.stringify(boardState),
       method: "POST",
+      mode : "no-cors",
       headers: [
         ["content-type", "application/json"]
       ]
@@ -58,7 +59,7 @@ export class TestSnake extends React.Component<ITestSnakeProps, ITestSnakeState>
           {response && <span>Move: {response}</span>}
         </CenteredRow>
         <CenteredRow>
-          <StyledButton onClick={this.sendBoard}>Ping Snake</StyledButton>
+          <StyledButton onClick={this.sendBoard}>Send board to Snake</StyledButton>
         </CenteredRow>
       </TitledContainer>
     )
