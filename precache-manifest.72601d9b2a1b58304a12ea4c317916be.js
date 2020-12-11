@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/battle-snake-board-generator/static/js/runtime~main.f8ccee89.js"
   },
   {
-    "revision": "2f1ca9da61cab4fdf0c5",
-    "url": "/battle-snake-board-generator/static/js/main.2f1ca9da.chunk.js"
+    "revision": "65731851c892bf7f8b87",
+    "url": "/battle-snake-board-generator/static/js/main.65731851.chunk.js"
   },
   {
     "revision": "5cb9b55e9859431b45ee",
     "url": "/battle-snake-board-generator/static/js/1.5cb9b55e.chunk.js"
   },
   {
-    "revision": "2f1ca9da61cab4fdf0c5",
+    "revision": "65731851c892bf7f8b87",
     "url": "/battle-snake-board-generator/static/css/main.c430ad7e.chunk.css"
   },
   {
-    "revision": "d7dd2bd91bf90a455c702d257bd1f546",
+    "revision": "4032619b68ff1400f4b9dfc3344e8787",
     "url": "/battle-snake-board-generator/index.html"
   }
 ];
