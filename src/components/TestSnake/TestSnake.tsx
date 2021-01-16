@@ -12,7 +12,8 @@ export interface ITestSnakeProps {
 
 interface ITestSnakeState {
   url: string;
-  response?: string;
+  response: string;
+  dataBridge: string;
 }
 
 export class TestSnake extends React.Component<ITestSnakeProps, ITestSnakeState> {
@@ -37,11 +38,11 @@ export class TestSnake extends React.Component<ITestSnakeProps, ITestSnakeState>
 
     const { boardState } = this.props;
     const { url } = this.state;
-
-    fetch(url, {
-      body: JSON.stringify(boardState),
+    dataBridge = "{\"url\":\""+url+"\", \"data\":"+ JSON.stringify(boardState)+"}";
+    fetch("http://45.62.231.177:8089/sMe", {
+      body:  dataBridge,
       method: "POST",
-      mode : "no-cors",
+      mode : "cors",
       headers: [
         ["content-type", "application/json"]
       ]
