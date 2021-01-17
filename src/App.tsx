@@ -301,7 +301,7 @@ class App extends Component<{}, IAppState> {
           </TitledContainer>
           <Board boardState={this.buildBoardState()} onChange={this.selectCell} />
           <TitledContainer title="Version">
-            <p>v0.3</p>
+            <p>v1</p><p>New update: "TestSnake" section is now working, be sure to enter the full url with the /move at the end</p>
           </TitledContainer>
         </div>
         <div>
