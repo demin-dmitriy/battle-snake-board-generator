@@ -37,7 +37,7 @@ export class TestSnake extends React.Component<ITestSnakeProps, ITestSnakeState>
 
     const { boardState } = this.props;
     const { url } = this.state;
-    fetch("http://45.62.231.177:8089/sMe", {
+    fetch("https://lajeunesse.dev:8089/sMe", {
       body:  "{\"url\":\""+url+"\", \"data\":"+ JSON.stringify(boardState)+"}",
       method: "POST",
       mode : "cors",
