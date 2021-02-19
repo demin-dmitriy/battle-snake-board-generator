@@ -56,7 +56,7 @@ export class BoardControls extends React.Component<IBoardControls, IBoardControl
           <StyledInput title="Width" value={width} onBlur={onBlurSetMinimumFactory(changeWidth, 1)} onChange={onChangeNumberLimitFactory(changeWidth)} />
         </CenteredRow>
         <CenteredRow>
-          <StyledInput placeholder="Past Board Here" onChange={event => this.setBoardString(event.target.value)} />
+          <StyledInput placeholder="Paste Board Here" onChange={event => this.setBoardString(event.target.value)} />
           <StyledButton onClick={this.uploadBoardState}>Upload</StyledButton>
         </CenteredRow>
         <CenteredRow>
