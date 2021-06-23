@@ -162,7 +162,7 @@ class App extends Component<{}, IAppState> {
         body: this.state.you.body,
         head: this.state.you.body[0],
         length: this.state.you.body.length,
-        latency: 20,
+        latency: "20",
         shout: "",
       },
       board: {
@@ -176,7 +176,7 @@ class App extends Component<{}, IAppState> {
           body: this.state.you.body,
           head: this.state.you.body[0],
           length: this.state.you.body.length,
-          latency: 20,
+          latency: "20",
           shout: "",
         }].concat(this.state.snakes.map(snake => ({
           health: parseInt(snake.health, 10),
@@ -185,7 +185,7 @@ class App extends Component<{}, IAppState> {
           body: snake.body,
           head: snake.body[0],
           length: snake.body.length,
-          latency: 20,
+          latency: "20",
           shout: "",
         }))),
         hazards: [],
