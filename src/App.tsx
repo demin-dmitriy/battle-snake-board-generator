@@ -161,7 +161,9 @@ class App extends Component<{}, IAppState> {
         name: this.state.you.colour,
         body: this.state.you.body,
         head: this.state.you.body[0],
-        length: this.state.you.body.length
+        length: this.state.you.body.length,
+        latency: 20,
+        shout: "",
       },
       board: {
         food: this.state.food,
@@ -173,15 +175,20 @@ class App extends Component<{}, IAppState> {
           name: this.state.you.colour,
           body: this.state.you.body,
           head: this.state.you.body[0],
-          length: this.state.you.body.length
+          length: this.state.you.body.length,
+          latency: 20,
+          shout: "",
         }].concat(this.state.snakes.map(snake => ({
           health: parseInt(snake.health, 10),
           id: snake.id,
           name: snake.colour,
           body: snake.body,
           head: snake.body[0],
-          length: snake.body.length
-        })))
+          length: snake.body.length,
+          latency: 20,
+          shout: "",
+        }))),
+        hazards: [],
       }
     }
   }
@@ -290,7 +297,7 @@ class App extends Component<{}, IAppState> {
             uploadBoard={this.uploadBoard}
           />
           <TestSnake boardState={this.buildBoardState()} />
-         
+
         </div>
         <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
           <TitledContainer title="Current Mode">
