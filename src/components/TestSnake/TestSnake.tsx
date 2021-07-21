@@ -21,7 +21,7 @@ export class TestSnake extends React.Component<ITestSnakeProps, ITestSnakeState>
     super(props);
 
     this.state = {
-      url: "http://localhost:5000/move"
+      url: "http://localhost:8000/move"
     }
   }
 
@@ -37,10 +37,9 @@ export class TestSnake extends React.Component<ITestSnakeProps, ITestSnakeState>
 
     const { boardState } = this.props;
     const { url } = this.state;
-    fetch("https://lajeunesse.dev:8089/sMe", {
-      body:  "{\"url\":\""+url+"\", \"data\":"+ JSON.stringify(boardState)+"}",
+    fetch(url, {
+      body:  JSON.stringify(boardState),
       method: "POST",
-      mode : "cors",
       headers: [
         ["content-type", "application/json"]
       ]
