@@ -39,8 +39,9 @@ const generateBoard = (boardState: IBoardState, onChange: (x: number, y: number,
   }
 
   for (let y = boardState.board.height -1 ; y >= 0 ; y--) {
-    
+
     for (let x = 0; x < boardState.board.width; x++) {
+      let isHazard: boolean = boardState.board.hazards.find( (p) => p.x == x && p.y == y) !== undefined;
       let snakePiece: {
         colour: string;
         isHead: boolean;
@@ -51,9 +52,9 @@ const generateBoard = (boardState: IBoardState, onChange: (x: number, y: number,
         output[boardState.board.height -1 - y].push(<CellComponent key={`${x},${boardState.board.height -1 - y}`} colour="orange" onChange={() => onChange(x, y, "food")} />)
       } else if (snakePiece !== undefined) {
         let id: string = snakePiece.id;
-        output[boardState.board.height -1 - y].push(<CellComponent key={`${x},${boardState.board.height -1 - y}`} colour={snakePiece.colour} isHead={snakePiece.isHead} onChange={() => onChange(x,  y, id)} />)
+        output[boardState.board.height -1 - y].push(<CellComponent key={`${x},${boardState.board.height -1 - y}`} colour={snakePiece.colour} isHead={snakePiece.isHead} isHazard={ isHazard } onChange={() => onChange(x,  y, id)} />)
       } else {
-        output[boardState.board.height -1 -y].push(<CellComponent key={`${x},${boardState.board.height -1 - y}`} onChange={() => onChange(x,  y, "")} />)
+        output[boardState.board.height -1 -y].push(<CellComponent key={`${x},${boardState.board.height -1 - y}`} isHazard={ isHazard } onChange={() => onChange(x,  y, "")} />)
       }
     }
   }

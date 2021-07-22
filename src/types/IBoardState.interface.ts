@@ -6,6 +6,7 @@ export interface IBoardState {
     food: ICoordinate[];
     height: number;
     snakes: ISnake[]
+    hazards: ICoordinate[];
     width: number;
   };
   game: {

@@ -36,6 +36,7 @@ interface IAppState {
   };
   mode: "food" | "you" | "snake";
   chosenId: string;
+  hazards: ICoordinate[];
 }
 
 class App extends Component<{}, IAppState> {
@@ -56,7 +57,8 @@ class App extends Component<{}, IAppState> {
         id: "you"
       },
       mode: "food",
-      chosenId: ""
+      chosenId: "",
+      hazards: [],
     }
   }
 
@@ -188,7 +190,7 @@ class App extends Component<{}, IAppState> {
           latency: "20",
           shout: "",
         }))),
-        hazards: [],
+        hazards: this.state.hazards,
       }
     }
   }
@@ -271,7 +273,8 @@ class App extends Component<{}, IAppState> {
           id: "you"
         },
         mode: "food",
-        chosenId: ""
+        chosenId: "",
+        hazards: uploadedState.board.hazards,
       });
     } catch (e) {
       alert("That didn't work");
