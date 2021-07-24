@@ -21,6 +21,7 @@ interface IAppState {
   id: string;
   height: string;
   width: string;
+  turn: number;
   food: ICoordinate[];
   snakes: {
     id: string;
@@ -48,6 +49,7 @@ class App extends Component<{}, IAppState> {
       id: generateId(),
       height: "11",
       width: "11",
+      turn: 0,
       food: [],
       snakes: [],
       you: {
@@ -156,7 +158,7 @@ class App extends Component<{}, IAppState> {
         },
         timeout: 500
       },
-      turn: 200,
+      turn: this.state.turn,
       you: {
         health: parseInt(this.state.you.health, 10),
         id: "you",
@@ -256,6 +258,7 @@ class App extends Component<{}, IAppState> {
         id: generateId(),
         height: uploadedState.board.height.toString(),
         width: uploadedState.board.width.toString(),
+        turn: uploadedState.turn,
         food: uploadedState.board.food,
         snakes: uploadedState.board.snakes.filter(snake => snake.id !== uploadedState.you.id).map(snake => {
           const colour: string = generateColour();
