@@ -284,6 +284,15 @@ class App extends Component<{}, IAppState> {
     }
   }
 
+  public loadBoard = (url_or_gameid: string, frame: string) => {
+    fetch(`http://127.0.0.1:8500/${url_or_gameid}$${frame}`, {
+      method: "GET",
+      headers: [
+        ["content-type", "application/json"]
+      ]
+    }).then(res => res.json()).then((boardState: IBoardState) => this.uploadBoard(JSON.stringify(boardState)));
+  }
+
   render() {
 
     const { height, width, snakes, you, food, mode, chosenId } = this.state;
@@ -301,6 +310,7 @@ class App extends Component<{}, IAppState> {
             height={height}
             width={width}
             uploadBoard={this.uploadBoard}
+            loadBoard={this.loadBoard}
           />
           <TestSnake boardState={this.buildBoardState()} />
 

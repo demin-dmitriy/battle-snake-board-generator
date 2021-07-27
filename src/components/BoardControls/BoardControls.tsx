@@ -12,11 +12,14 @@ export interface IBoardControls {
   changeHeight: (value: string) => void;
   changeWidth: (value: string) => void;
   uploadBoard: (value: string) => void;
+  loadBoard: (url_or_gameid: string, frame: string) => void;
   boardState: IBoardState;
 }
 
 interface IBoardControlsState {
   boardUploadString: string;
+  url_or_gameid: string;
+  frame: string;
 }
 
 export class BoardControls extends React.Component<IBoardControls, IBoardControlsState> {
@@ -26,7 +29,9 @@ export class BoardControls extends React.Component<IBoardControls, IBoardControl
   constructor(props: IBoardControls) {
     super(props);
     this.state = {
-      boardUploadString: ""
+      url_or_gameid: "",
+      boardUploadString: "",
+      frame: "",
     }
   }
 
@@ -44,7 +49,15 @@ export class BoardControls extends React.Component<IBoardControls, IBoardControl
     uploadBoard(boardUploadString);
   }
 
+  public loadBoardState = () => {
+    const { url_or_gameid, frame } = this.state;
+    const { loadBoard } = this.props;
+    loadBoard(url_or_gameid, frame);
+  }
+
   public setBoardString = (value: string) => this.setState({ boardUploadString: value });
+  public setUrlOrGameId = (value: string) => this.setState({ url_or_gameid: value });
+  public setFrame = (value: string) => this.setState({ frame: value });
 
   render() {
     const { height, width, changeHeight, changeWidth, uploadBoard, boardState } = this.props;
@@ -58,6 +71,11 @@ export class BoardControls extends React.Component<IBoardControls, IBoardControl
         <CenteredRow>
           <StyledInput placeholder="Paste Board JSON Here" onChange={event => this.setBoardString(event.target.value)} />
           <StyledButton onClick={this.uploadBoardState}>Upload</StyledButton>
+        </CenteredRow>
+        <CenteredRow>
+          <StyledInput placeholder="Paste game URL or ID here" onChange={event => this.setUrlOrGameId(event.target.value)} />
+          <StyledInput title="Frame" onChange={event => this.setFrame(event.target.value)} />
+          <StyledButton onClick={this.loadBoardState}>Load</StyledButton>
         </CenteredRow>
         <CenteredRow>
           <StyledButton onClick={this.copyBoardState}>Copy Board State</StyledButton>
