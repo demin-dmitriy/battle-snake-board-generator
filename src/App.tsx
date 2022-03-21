@@ -285,7 +285,7 @@ class App extends Component<{}, IAppState> {
   }
 
   public loadBoard = (url_or_gameid: string, frame: string) => {
-    fetch(`http://127.0.0.1:8500/${url_or_gameid}$${frame}`, {
+    fetch(`http://${window.location.hostname}:8500/${url_or_gameid}$${frame}`, {
       method: "GET",
       headers: [
         ["content-type", "application/json"]
